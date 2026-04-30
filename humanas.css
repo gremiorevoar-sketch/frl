@@ -1,0 +1,382 @@
+/* =========================
+   VARIÁVEIS DE CORES
+========================= */
+:root {
+    --bg-main: #f7fbfc;
+    --bg-card: #ffffff;
+    --bg-soft-blue: #dbeafe;
+    --bg-soft-green: #e6f7f1;
+
+    --text-main: #1e3a5f;
+    --text-soft: #3b556e;
+
+    --accent-blue: #7fb3ff;
+    --accent-green: #7fd1b9;
+
+    --shadow: rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   MODO NOTURNO
+========================= */
+.dark-mode {
+    --bg-main: #121a1c;
+    --bg-card: #1b2629;
+    --bg-soft-blue: #1f2f3a;
+    --bg-soft-green: #1f3a34;
+
+    --text-main: #e6f1f5;
+    --text-soft: #b5cbd6;
+
+    --accent-blue: #6aa8ff;
+    --accent-green: #63c7ad;
+
+    --shadow: rgba(0, 0, 0, 0.5);
+}
+
+/* =========================
+   BASE
+========================= */
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+    background: linear-gradient(
+        135deg,
+        var(--accent-blue),
+        var(--accent-green)
+    );
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+/* =========================
+   CONTEÚDO
+========================= */
+main {
+    padding: 30px 15px;
+}
+
+/* =========================
+   CARDS / ARTICLES
+========================= */
+article,
+.videos-humanas,
+.videos-natureza {
+    background-color: var(--bg-card);
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: 0 6px 14px var(--shadow);
+    margin-bottom: 30px;
+}
+
+/* =========================
+   TÍTULOS
+========================= */
+h1, h2 {
+    color: var(--text-main);
+}
+
+.videos-humanas h2,
+.videos-natureza h2 {
+    border-left: 6px solid var(--accent-blue);
+    padding-left: 12px;
+}
+
+/* =========================
+   LISTAS
+========================= */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 14px;
+}
+
+/* =========================
+   LINKS DE VÍDEO
+========================= */
+.videos-humanas a,
+.videos-natureza a {
+    display: block;
+    padding: 15px;
+    border-radius: 10px;
+    background: linear-gradient(
+        135deg,
+        var(--bg-soft-blue),
+        var(--bg-soft-green)
+    );
+    color: var(--text-main);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Hover suave */
+.videos-humanas a:hover,
+.videos-natureza a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px var(--shadow);
+    filter: brightness(1.05);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background-color: var(--bg-soft-blue);
+    color: var(--text-soft);
+    text-align: center;
+    padding: 15px;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 600px) {
+    article,
+    .videos-humanas,
+    .videos-natureza {
+        padding: 20px;
+    }
+}
+    .videos-humanas h2,
+    .videos-natureza h2 {
+        font-size: 1.3rem;
+    }
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121a1c;
+    }
+}
+button {
+    background: var(--accent-blue);
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+/* =========================
+   VARIÁVEIS DE CORES
+========================= */
+:root {
+    --bg-main: #f7fbfc;
+    --bg-card: #ffffff;
+    --bg-soft-blue: #dbeafe;
+    --bg-soft-green: #e6f7f1;
+
+    --text-main: #1e3a5f;
+    --text-soft: #3b556e;
+
+    --accent-blue: #7fb3ff;
+    --accent-green: #7fd1b9;
+
+    --shadow: rgba(0, 0, 0, 0.08);
+
+    --transition-speed: 0.4s;
+}
+
+/* =========================
+   MODO NOTURNO
+========================= */
+.dark-mode {
+    --bg-main: #121a1c;
+    --bg-card: #1b2629;
+    --bg-soft-blue: #1f2f3a;
+    --bg-soft-green: #1f3a34;
+
+    --text-main: #e6f1f5;
+    --text-soft: #b5cbd6;
+
+    --accent-blue: #6aa8ff;
+    --accent-green: #63c7ad;
+
+    --shadow: rgba(0, 0, 0, 0.5);
+}
+
+/* =========================
+   BASE E RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 15px;
+    transition: background var(--transition-speed);
+}
+
+header h1 {
+    font-size: 2.3rem;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* =========================
+   BOTÃO MODO NOTURNO
+========================= */
+button.dark-toggle {
+    background: var(--accent-blue);
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background var(--transition-speed), transform 0.2s ease;
+}
+
+button.dark-toggle:hover {
+    transform: scale(1.05);
+    background: var(--accent-green);
+}
+
+/* =========================
+   CONTEÚDO PRINCIPAL
+========================= */
+main {
+    flex: 1;
+    padding: 30px 15px;
+}
+
+/* =========================
+   ARTICLES / CARDS
+========================= */
+article,
+.videos-humanas,
+.videos-natureza,
+.videos-matematica,
+.videos-redacao {
+    background-color: var(--bg-card);
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: 0 6px 14px var(--shadow);
+    margin-bottom: 30px;
+    transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+article:hover,
+.videos-humanas:hover,
+.videos-natureza:hover,
+.videos-matematica:hover,
+.videos-redacao:hover {
+    box-shadow: 0 8px 18px var(--shadow);
+}
+
+/* =========================
+   TÍTULOS
+========================= */
+h1, h2 {
+    color: var(--text-main);
+    transition: color var(--transition-speed);
+}
+
+.videos-humanas h2,
+.videos-natureza h2,
+.videos-matematica h2,
+.videos-redacao h2 {
+    border-left: 6px solid var(--accent-blue);
+    padding-left: 12px;
+}
+
+/* =========================
+   LISTAS
+========================= */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 14px;
+}
+
+/* =========================
+   LINKS DE VÍDEO
+========================= */
+.videos-humanas a,
+.videos-natureza a,
+.videos-matematica a,
+.videos-redacao a {
+    display: block;
+    padding: 15px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--bg-soft-blue), var(--bg-soft-green));
+    color: var(--text-main);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-speed);
+}
+
+/* Hover suave */
+.videos-humanas a:hover,
+.videos-natureza a:hover,
+.videos-matematica a:hover,
+.videos-redacao a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px var(--shadow);
+    filter: brightness(1.05);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background-color: var(--bg-soft-blue);
+    color: var(--text-soft);
+    text-align: center;
+    padding: 15px;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 600px) {
+    article,
+    .videos-humanas,
+    .videos-natureza,
+    .videos-matematica,
+    .videos-redacao {
+        padding: 20px;
+    }
+
+    h1, h2 {
+        font-size: 1.3rem;
+    }
+}
