@@ -1,0 +1,458 @@
+:root {
+    --bg-main: #f7fbfc;           /* fundo geral */
+    --bg-card: #ffffff;           /* cards / artigos */
+    --bg-soft-blue: #e4e8ee;      /* azul bebê */
+    --bg-soft-green: #397a63;     /* verde bebê */
+
+    --text-main: #cacaca;         /* texto principal */
+    --text-soft: #3b556e;         /* texto secundário */
+    
+
+    --accent-blue: #7fb3ff;       /* detalhes / bordas */
+    --accent-green: #7fd1b9;      
+
+    --shadow: rgba(0, 0, 0, 0.08);
+
+    --transition-speed: 0.4s;
+}
+
+/* =========================
+   MODO NOTURNO
+========================= */
+.dark-mode {
+    --bg-main: #121a1c;
+    --bg-card: #1b2629;
+    --bg-soft-blue: #1f2f3a;
+    --bg-soft-green: #1f3a34;
+
+    --text-main: #e6f1f5;
+    --text-soft: #b5cbd6;
+
+    --accent-blue: #6aa8ff;
+    --accent-green: #63c7ad;
+
+    --shadow: rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode {
+    background: var(--bg-main);
+    color: var(--text-main);
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    letter-spacing: 0.4px;
+}
+
+/* Corpo */
+body {
+    background: linear-gradient(180deg, #f8f8f8, #ffffff);
+    color: #385c70;
+    line-height: 1.6;
+}
+
+/* Seção inicial */
+#inicio {
+    background: linear-gradient(135deg, #1f4864, #12463a);
+    color: #ccd8df;
+    text-align: center;
+    padding: 70px 20px;
+    position: relative;
+    overflow: hidden;
+}
+#inicio p#crets {
+    font-size: 15px;
+    color: #a0b8c9;
+    margin-top: 10%;
+    margin-left: 1px;
+    
+
+}
+
+/* Efeito suave de movimento no fundo */
+#inicio::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top, rgba(255,255,255,0.35), transparent 60%);
+    animation: brilho 6s infinite alternate;
+}
+
+@keyframes brilho {
+    from { opacity: 0.4; }
+    to { opacity: 0.7; }
+}
+
+#inicio h1 {
+    font-size: 3rem;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+#inicio p {
+    font-size: 1.25rem;
+    position: relative;
+}
+
+#obj {
+    font-weight: bold;
+    margin: 18px 0 28px;
+    font-size: 1.15rem;
+}
+
+/* Logo */
+#inicio img {
+    margin-top: 25px;
+    width: 220px;
+    border-radius: 48%;
+    border: 6px solid #ffffff;
+    box-shadow: 0 12px 30px rgba(95,168,211,0.35);
+    transition: transform 0.4s ease;
+    position: relative;
+}
+
+#inicio img:hover {
+    transform: scale(1.05) rotate(-1deg);
+}
+/* =========================
+   SOBRE O ENEM - ANIMAÇÃO
+========================= */
+#sobre-enem {
+    max-width: 900px;
+    margin: 60px auto;
+    background-color: var(--bg-card);
+    padding: 40px;
+    border-radius: 22px;
+    box-shadow: 0 15px 35px rgba(95,168,211,0.25);
+    position: relative;
+    overflow: hidden;
+
+    /* Inicialmente invisível para animação */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideUp 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+#sobre-enem h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: var(--accent-blue);
+    text-align: center;
+}
+
+#sobre-enem h3 {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-main);
+    margin-bottom: 20px;
+}
+
+#sobre-enem p {
+    font-style: italic;
+    color: var(--text-soft);
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* =========================
+   ANIMAÇÃO SUAVE
+========================= */
+@keyframes fadeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Adicionando efeito hover sutil */
+#sobre-enem:hover {
+    box-shadow: 0 20px 45px rgba(95,168,211,0.35);
+    transform: translateY(-5px);
+    transition: all 0.5s ease;
+}
+
+
+/* Matérias */
+#materias {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 25px;
+    
+}
+
+#materias h4 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    color: #5fa8d3;
+}
+
+/* Lista de matérias */
+#materias ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 25px;
+    padding: 0;
+}
+
+/* Cards das matérias */
+#materias a {
+    display: block;
+    padding: 26px 20px;
+    background: linear-gradient(180deg, #7fa4f3, #285ed4);
+    border-radius: 22px;
+    text-align: center;
+    text-decoration: none;
+    color: #dde5e9;
+    font-weight: bold;
+    font-size: 1.15rem;
+    box-shadow: 0 10px 25px rgba(127,216,199,0.35);
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Brilho animado no card */
+#materias a::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+    transform: rotate(25deg);
+    transition: 0.6s;
+    opacity: 0;
+}
+
+#materias a:hover::before {
+    opacity: 1;
+    left: 100%;
+}
+
+#materias a:hover {
+    background: linear-gradient(135deg, #b9e3ff, #8be0cc);
+    color: #2f3e46;
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(95,168,211,0.4);
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    #inicio h1 {
+        font-size: 2.3rem;
+    }
+
+    #materias h4 {
+        font-size: 1.7rem;
+    }
+
+    #inicio img {
+        width: 180px;
+    }
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 18px;
+    background: linear-gradient(135deg, #8be0cc, #5fa8d3);
+    color: #ffffff;
+    margin-top: 50px;
+    font-size: 0.95rem;
+}
+button {
+    background: var(--accent-blue);
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+/* =========================
+   LINKS DE VIDEOAULAS  
+========================= */
+.videos-humanas a,
+.videos-natureza a {
+    display: block;
+
+    padding: 15px;
+    border-radius: 10px;
+    background: linear-gradient(
+        135deg,
+        var(--bg-soft-blue),
+        var(--bg-soft-green)
+    );  
+    color: var(--text-main);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+/* SEÇÕES GERAIS */
+.noticias, .repertorios, .temas,   .site-praticar {
+    max-width: 900px;
+    margin: 30px auto;
+    background: #1f262b;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    
+}
+.site-praticar h5{
+    font-size: 21px;
+}
+
+
+.descricao {
+    color: #faf6f6;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+/* NOTÍCIAS */
+.noticias ul {
+    list-style: none;
+}
+
+.noticias li {
+    margin-bottom: 15px;
+}
+
+.noticias a {
+    display: block;
+    text-decoration: none;
+    background: #5492cfd5;
+    padding: 15px;
+    border-radius: 8px;
+    color: #000000;
+    transition: 0.3s;
+}
+
+.noticias a span {
+    display: block;
+    font-size: 0.9rem;
+    color: #000000;
+}
+
+.noticias a:hover {
+    background: #e3e9f0;
+}
+
+/* Site praticar */
+.site-praticar ul {
+    list-style: none;
+}
+
+.site-praticar li {
+    margin-bottom: 15px;
+}
+
+.site-praticar a {
+    display: block;
+    text-decoration: none;
+    background: #5492cfd5;
+    padding: 15px;
+    border-radius: 8px;
+    color: #000000;
+    transition: 0.3s;
+}
+
+.site-praticar a span {
+    display: block;
+    font-size: 0.9rem;
+    color: #000000;
+}
+
+.site-praticar a:hover {
+    background: #e3e9f0;
+}
+
+
+/* REPERTÓRIOS */
+.card {
+    background: #0a0a0a;
+    padding: 18px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+
+.card h3 {
+    margin-bottom: 8px;
+    color: #efeef0;
+}
+
+.card p.strong {
+    font-size: 0.95rem;
+    color: var(--bg-card);
+}
+
+.uso {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: #cfcfcf;
+}
+
+/* TEMAS */
+.temas ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.temas li {
+    background: #3f66af;
+    color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.95rem;
+}
+.dark {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+.dark section {
+    background: #1e1e1e;
+}
+
+.fav-btn {
+    margin-top: 10px;
+    padding: 6px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.fav-btn.ativo {
+    background: gold;
+}
+
+.progresso {
+    width: 100%;
+    background: #ddd;
+    height: 10px;
+    border-radius: 10px;
+}
+
+#barraProgresso {
+    height: 10px;
+    width: 0%;
+    background: #1e3c72;
+    border-radius: 10px;
+}
